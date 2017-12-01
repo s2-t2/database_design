@@ -62,10 +62,3 @@ CREATE TABLE Order (
 	trackingNumber varchar(10) UNIQUE,
 	);
 );
-
-
-
-
-
-
->>>>>>> 7e052b208134de18185e08b3f60be9ce58c7a332
