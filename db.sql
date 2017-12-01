@@ -14,9 +14,9 @@ CREATE TABLE Product(
 	stockQuantity int NOT NULL, 
 	price_BasePrice decimal(20,2) NOT NULL, 
 	price_Discount int, 
-	price_Vat int NOT NULL, 
-	price_WithVat decimal(20,2) NOT NULL, 
-	price_WithOutVat decimal(20,2) NOT NULL);
+	price_Vat int NOT NULL); 
+	#price_WithVat decimal(20,2) NOT NULL, derived att. 
+	#price_WithOutVat decimal(20,2) NOT NULL); derived att. 
 
 CREATE TABLE Users(
 	id int NOT NULL PRIMARY KEY, 
