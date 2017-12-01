@@ -25,3 +25,11 @@ VALUES(4, "Nokia 360", 0, "We sell damn good Nokia 360", 80, 750, 12, 25, 2);
 
 INSERT INTO Product(id, title, featured, description, stockQuantity, price_BasePrice,     price_Discount, price_vat, deptID)
 VALUES(5, "Sony Ericsson", 1, "We sell damn good Ericsson", 45, 2500, 20, 25, 2);
+
+-- Users
+
+INSERT INTO Users(id, phoneNumber, email, address_city, address_zip, address_street, fullName_FirstName, fullName_LastName, personNr, checkBox, password)
+VALUES(1, "+467345060", "bobmarley@jammin.com", "Kingston Town", 1234, "420 Rasta High Way", "Bob", "Marley", "420420BOB", 1, "rastamanvibrations");
+
+INSERT INTO Users(id, phoneNumber, email, address_city, address_zip, address_street, fullName_FirstName, fullName_LastName, personNr, checkBox, password)
+VALUES(2, "+467345063", "ironlion@positivevibrations.com", "Kingston Town", 1334, "420 Herb Way", "Iron", "Lion", "420420BOB", 1, "ironlikealioninzion");
