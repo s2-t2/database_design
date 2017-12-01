@@ -12,11 +12,11 @@ CREATE TABLE Product(
 	featured bit NOT NULL, 
 	description text NOT NULL, 
 	stockQuantity int NOT NULL, 
-	price_BasePrice decimal(20,2) NOT NULL, 
-	price_Discount int, 
-	price_Vat int NOT NULL); 
-	#price_WithVat decimal(20,2) NOT NULL, derived att. 
-	#price_WithOutVat decimal(20,2) NOT NULL); derived att. 
+	price_BasePrice decimal(10,2) NOT NULL,
+	price_Discount decimal(10,2) NOT NULL,
+	price_vat decimal(10,2) NOT NULL,
+	FOREIGN KEY (id) REFERENCES Department (id), 
+);
 
 CREATE TABLE Users(
 	id int NOT NULL PRIMARY KEY, 
@@ -40,3 +40,9 @@ CREATE TABLE User_Product(
 	Constraint pid_FK FOREIGN KEY (pid) REFERENCES Department (id), 
 	Constraint puid_PK PRIMARY KEY (uid, pid)
 );
+
+
+
+
+
+
