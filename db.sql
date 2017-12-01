@@ -54,19 +54,33 @@ CREATE TABLE Keywords(
 	);
 
 CREATE TABLE Order (
-	orderID int NOT NULL PRIMARY KEY,
+	id int NOT NULL PRIMARY KEY,
 	orderDate varchar(10) NOT NULL,
 	-- lastChangeDate varchar(10) NOT NULL, is a derived attribute
 	paymentReference varchar(10) NOT NULL UNIQUE,
 	trackingNumber varchar(10) UNIQUE,
+	uid int NOT NULL UNIQUE,
+	FOREIGN KEY (uid) REFERENCES Users (id)
 	);
 CREATE TABLE Status (
 	statusID int NOT NULL PRIMARY KEY,
 	status text NOT NULL,
 	orderId int NOT NULL UNIQUE,
-	FOREIGN KEY (orderId) REFERENCES Order (orderID)
+	FOREIGN KEY (orderId) REFERENCES Order (id)
 -- textlist i.e. history should be derived att
 	);
+
+CREATE TABLE Order_Products(
+	orderID int NOT NULL UNIQUE,
+	prod_ID int NOT NULL,
+	Constraint oid_FK FOREIGN KEY (orderID) REFERENCES Order (id), 
+	Constraint pid_FK FOREIGN KEY (prod_ID) REFERENCES Product (id), 
+	Constraint poid_PK PRIMARY KEY (orderID, prod_ID)
+	quantity int NOT NULL, 
+
+	-- derived attribute is total retail price
+
+	):
 );
 
 
