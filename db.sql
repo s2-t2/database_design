@@ -48,12 +48,12 @@ CREATE TABLE User_Product(
 
 CREATE TABLE Keywords(
 	keyword_id int NOT NULL PRIMARY KEY,
-	name varchar NOT NULL UNIQUE
-	pid_FK int NOT NULL,
+	name varchar(255) NOT NULL UNIQUE,
+	pid int NOT NULL,
 	FOREIGN KEY (pid) REFERENCES Product (id)
 	);
 
-CREATE TABLE Order (
+CREATE TABLE Orders (
 	id int NOT NULL PRIMARY KEY,
 	orderDate varchar(10) NOT NULL,
 	-- lastChangeDate varchar(10) NOT NULL, is a derived attribute
@@ -66,21 +66,19 @@ CREATE TABLE Status (
 	statusID int NOT NULL PRIMARY KEY,
 	status text NOT NULL,
 	orderId int NOT NULL UNIQUE,
-	FOREIGN KEY (orderId) REFERENCES Order (id)
+	FOREIGN KEY (orderId) REFERENCES Orders (id)
 -- textlist i.e. history should be derived att
 	);
 
 CREATE TABLE Order_Products(
 	orderID int NOT NULL UNIQUE,
 	prod_ID int NOT NULL,
-	Constraint oid_FK FOREIGN KEY (orderID) REFERENCES Order (id), 
-	Constraint pid_FK FOREIGN KEY (prod_ID) REFERENCES Product (id), 
-	Constraint poid_PK PRIMARY KEY (orderID, prod_ID)
-	quantity int NOT NULL, 
+	Constraint oid_FK FOREIGN KEY (orderID) REFERENCES Orders (id), 
+	Constraint ppid_FK FOREIGN KEY (prod_ID) REFERENCES Product (id), 
+	Constraint poid_PK PRIMARY KEY (orderID, prod_ID),
+	quantity int NOT NULL 
 
 	-- derived attribute is total retail price
-
-	):
 );
 
 
