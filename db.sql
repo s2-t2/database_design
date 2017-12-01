@@ -5,8 +5,9 @@ CREATE TABLE Department(id int NOT NULL PRIMARY KEY,
 	description text NOT NULL, 
 	parentId int);
 
-//add average rating to product
-CREATE TABLE Product(id int NOT NULL PRIMARY KEY, 
+-- add average rating to product
+CREATE TABLE Product(
+	id int NOT NULL PRIMARY KEY, 
 	title varchar(255) NOT NULL UNIQUE, 
 	featured bit NOT NULL, 
 	description text NOT NULL, 
@@ -17,9 +18,8 @@ CREATE TABLE Product(id int NOT NULL PRIMARY KEY,
 	price_WithVat decimal(20,2) NOT NULL, 
 	price_WithOutVat decimal(20,2) NOT NULL);
 
-CREATE TABLE User_Product()
-
-CREATE TABLE Users(id int NOT NULL PRIMARY KEY, 
+CREATE TABLE Users(
+	id int NOT NULL PRIMARY KEY, 
 	phoneNumber varchar(16), 
 	email varchar(255) NOT NULL, 
 	address_city varchar(255) NOT NULL, 
@@ -31,8 +31,12 @@ CREATE TABLE Users(id int NOT NULL PRIMARY KEY,
 	checkBox bit NOT NULL, 
 	password varchar(255) NOT NULL);
 
-CREATE TABLE User_Product(uid int NOT NULL, 
-	pid int NOT NULL, 
+CREATE TABLE User_Product(
+	uid int NOT NULL, 
+	pid int NOT NULL,
+	review_stars int NOT NULL,
+	review_text text NOT NULL,
 	Constraint uid_FK FOREIGN KEY (uid) REFERENCES Users (id), 
 	Constraint pid_FK FOREIGN KEY (pid) REFERENCES Department (id), 
-	Constraint puid_PK PRIMARY KEY (uid, pid));
+	Constraint puid_PK PRIMARY KEY (uid, pid)
+);
