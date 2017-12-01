@@ -56,9 +56,22 @@ CREATE TABLE Keywords(
 CREATE TABLE Order (
 	orderID int NOT NULL PRIMARY KEY,
 	orderDate varchar(10) NOT NULL,
-	lastChangeDate varchar(10) NOT NULL,
-	lastChangeDate varchar(10) NOT NULL,
+	-- lastChangeDate varchar(10) NOT NULL, is a derived attribute
 	paymentReference varchar(10) NOT NULL UNIQUE,
 	trackingNumber varchar(10) UNIQUE,
 	);
+CREATE TABLE Status (
+	statusID int NOT NULL PRIMARY KEY,
+	status text NOT NULL,
+	orderId int NOT NULL UNIQUE,
+	FOREIGN KEY (orderId) REFERENCES Order (orderID)
+-- textlist i.e. history should be derived att
+	);
 );
+
+
+
+
+
+
+
