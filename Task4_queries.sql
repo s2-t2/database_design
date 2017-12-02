@@ -1,22 +1,22 @@
---QUERIES
+-- QUERIES
 
---Welcome text for the home page
+-- Welcome text for the home page
 Select description AS WelcomeMessage
 from Department
 where Department.id = 11;
 
---List of the top level departments with fields needed for the homepage
+-- List of the top level departments with fields needed for the homepage
 Select * 
 from Department
 where Department.id = 1 OR Department.id = 2;
 
---List of the featured products with fields needed for the homepage
+-- List of the featured products with fields needed for the homepage
 Select * 
 from Product
 where Product.featured = 1;
 
---Given a product, list all keyword related products
---NOTE: the chosen product here is 5: "Sony Ericsson" It returns 4 electronic products, 
+-- Given a product, list all keyword related products
+-- NOTE: the chosen product here is 5: "Sony Ericsson" It returns 4 electronic products, 
 -- because they are all related by all keywords related to "Sony Ericsson"
 CREATE VIEW view6 AS
 SELECT key_ID
@@ -32,21 +32,21 @@ SELECT Product.title
 FROM Product
 WHERE id in (SELECT * from view7) AND NOT id = 5;
 
---Given a department, 
---list of all its products (title, short description, 
---current retail price) with their average rating
+-- Given a department, 
+-- list of all its products (title, short description, 
+-- current retail price) with their average rating
 SELECT Product.id, Product.title, avg(User_Product.review_stars)
 FROM Product
 LEFT JOIN User_Product ON User_Product.pid = Product.id
 GROUP BY Product.id, Product.title;
 
---List of all products on sale sorted by the discount percentage (starting with the biggest discount)
+-- List of all products on sale sorted by the discount percentage (starting with the biggest discount)
 SELECT id, title, price_Discount
 FROM Product
 ORDER BY price_Discount DESC;
 
---List of all new orders sorted by the order date (id, order date, customer’s name and the city, and the
---total price)
+-- List of all new orders sorted by the order date (id, order date, customer’s name and the city, and the
+-- total price)
 CREATE VIEW view1 AS
 Select Order_Products.orderID, Order_Products.prod_ID, Order_Products.quantity, Orders.orderDate, Orders.uid
 FROM Order_Products
@@ -66,7 +66,7 @@ LEFT JOIN view2 ON view2.prod_ID = Product.id
 GROUP BY view2.uid, view2.prod_ID, Product.id;
 
 CREATE VIEW view4 AS
-Select view3.orderID, sum(quantity*(price_BasePrice+price_BasePrice*(price_Vat*.01)-price_BasePrice*(price_Discount*.01))) AS TotalPrice from view3 Group by orderID;
+Select view3.orderID, sum(quantity*(price_BasePrice+price_BasePrice*(price_Vat*0.01)-price_BasePrice*(price_Discount*.01))) AS TotalPrice from view3 Group by orderID;
 
 CREATE VIEW view5 AS
 SELECT view3.orderID, view3.orderDate, view3.fullName_LastName, view3.fullName_FirstName, view3.address_city, view4.TotalPrice
@@ -77,14 +77,11 @@ Order By convert(view3.orderDate, date);
 
 Select * from view5;
 
-
-
---10 best-selling products (in last 30 days)
+-- 10 best-selling products (in last 30 days)
 Select sum(Order_Products.quantity) AS bestsellers, Order_Products.prod_ID, Product.title   
 from Product 
 LEFT JOIN Order_Products on Order_Products.prod_ID = Product.id
 Group BY Order_Products.prod_ID ORDER BY sum(Order_Products.quantity) DESC limit 10;
-
 
 
 

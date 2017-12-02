@@ -48,9 +48,7 @@ CREATE TABLE User_Product(
 
 CREATE TABLE Keywords(
 	keyword_id int NOT NULL PRIMARY KEY,
-	name varchar(255) NOT NULL UNIQUE,
-	pid int NOT NULL,
-	FOREIGN KEY (pid) REFERENCES Product (id)
+	kname varchar(255) NOT NULL UNIQUE
 	);
 
 CREATE TABLE Orders (
