@@ -71,14 +71,22 @@ CREATE TABLE Status (
 	);
 
 CREATE TABLE Order_Products(
-	orderID int NOT NULL UNIQUE,
+	orderID int NOT NULL,
 	prod_ID int NOT NULL,
 	Constraint oid_FK FOREIGN KEY (orderID) REFERENCES Orders (id), 
-	Constraint ppid_FK FOREIGN KEY (prod_ID) REFERENCES Product (id), 
+	Constraint proid_FK FOREIGN KEY (prod_ID) REFERENCES Product (id), 
 	Constraint poid_PK PRIMARY KEY (orderID, prod_ID),
 	quantity int NOT NULL 
 
 	-- derived attribute is total retail price
+);
+
+CREATE TABLE Keyword_Products(
+	key_ID int NOT NULL,
+	prod_ID int NOT NULL,
+	Constraint kid_FK FOREIGN KEY (key_ID) REFERENCES Keywords (keyword_id),
+    Constraint prodid_FK FOREIGN KEY (prod_ID) REFERENCES Product (id),
+    Constraint kpid_PK PRIMARY KEY (key_ID, prod_ID)
 );
 
 
