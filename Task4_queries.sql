@@ -43,6 +43,7 @@ GROUP BY Product.id, Product.title;
 -- List of all products on sale sorted by the discount percentage (starting with the biggest discount)
 SELECT id, title, price_Discount
 FROM Product
+where price_Discount is not null
 ORDER BY price_Discount DESC;
 
 -- List of all new orders sorted by the order date (id, order date, customer’s name and the city, and the
