@@ -35,7 +35,7 @@ WHERE id in (SELECT * from view7) AND NOT id = 5;
 -- Given a department, 
 -- list of all its products (title, short description, 
 -- current retail price) with their average rating
-SELECT Product.id, Product.title, avg(User_Product.review_stars)
+SELECT Product.id, Product.title, avg(User_Product.review_stars), Product.description, Product.price_BasePrice
 FROM Product
 LEFT JOIN User_Product ON User_Product.pid = Product.id
 GROUP BY Product.id, Product.title;
