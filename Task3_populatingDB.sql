@@ -1,67 +1,223 @@
 -- populating dept.
 INSERT INTO Department(id, icons, link, title, description, parentid)
-VALUES(11, "/images/logo1.png", "www.shop.com", "Home of shop.com Clothes & Electronics", "We sell damn good clothes & electronics", NULL);
+VALUES(
+	11,
+	"/images/logo1.png",
+    "www.shop.com",
+    "Home of shop.com Clothes & Electronics",
+    "We sell damn good clothes & electronics",
+    NULL);
+    
 INSERT INTO Department(id, icons, link, title, description, parentid)
-VALUES(1, "/images/logo1.png", "www.shop.com/clothes", "Clothes", "We sell damn good clothes", 11);
+VALUES(
+	1, 
+    "/images/logo1.png", 
+    "www.shop.com/clothes",
+    "Clothes", "We sell damn good clothes", 
+    11);
+    
 INSERT INTO Department(id, icons, link, title, description, parentid)
-VALUES(2, "/images/logo2.png", "www.shop.com/electronics", "Electronics", "We sell damn good electronics", 11);
+VALUES(
+	2,
+    "/images/logo2.png",
+    "www.shop.com/electronics"
+    , "Electronics", 
+    "We sell damn good electronics",
+    11);
+    
 INSERT INTO Department(id, icons, link, title, description, parentid)
-VALUES(3, "/images/logo1.png", "www.shop.com/clothes/mensclothes", "Men's Clothes", "We sell damn good Men's Clothes", 1);
+VALUES(
+	3,
+    "/images/logo1.png", 
+    "www.shop.com/clothes/mensclothes",
+    "Men's Clothes",
+    "We sell damn good Men's Clothes",
+    1);
+    
 INSERT INTO Department(id, icons, link, title, description, parentid)
-VALUES(4, "/images/logo1.png", "www.shop.com/clothes/womensclothes", "Women's Clothes", "We sell damn good Women's Clothes", 1);
+VALUES(
+	4,
+    "/images/logo1.png",
+    "www.shop.com/clothes/womensclothes",
+    "Women's Clothes", 
+    "We sell damn good Women's Clothes",
+    1);
+    
 INSERT INTO Department(id, icons, link, title, description, parentid)
-VALUES(5, "/images/logo1.png", "www.shop.com/clothes/kidsclothes", "Kid's Clothes", "We sell damn good Kid's Clothes", 1);
+VALUES(
+	5,
+    "/images/logo1.png", 
+    "www.shop.com/clothes/kidsclothes",
+    "Kid's Clothes",
+    "We sell damn good Kid's Clothes", 
+    1);
+    
 INSERT INTO Department(id, icons, link, title, description, parentid)
-VALUES(6, "/images/logo1.png", "www.shop.com/clothes/fancyclothes", "Fancy Clothes", "We sell damn good Fancy Clothes", 1);
+VALUES(
+	6,
+    "/images/logo1.png", 
+    "www.shop.com/clothes/fancyclothes",
+    "Fancy Clothes",
+    "We sell damn good Fancy Clothes",
+    1);
+    
 INSERT INTO Department(id, icons, link, title, description, parentid)    
-VALUES(7, "/images/logo2.png", "www.shop.com/electronics/Computers and Tablets", "Computers and Tablets", "We sell damn good computer and tablets", 2);        
+VALUES(
+	7,
+    "/images/logo2.png",
+    "www.shop.com/electronics/Computers and Tablets", 
+    "Computers and Tablets", 
+    "We sell damn good computer and tablets",
+    2);   
+    
 INSERT INTO Department(id, icons, link, title, description, parentid)    
-VALUES(8, "/images/logo2.png", "www.shop.com/electronics/Desktop ", "Desktop", "We sell damn good Desktop", 2);        
+VALUES(
+	8, 
+    "/images/logo2.png",
+    "www.shop.com/electronics/Desktop ",
+    "Desktop",
+    "We sell damn good Desktop", 
+    2); 
+    
 INSERT INTO Department(id, icons, link, title, description, parentid)
-VALUES(10, "/images/logo2.png", "www.shop.com/electronics/Computers and Tablets", "Desktops", "We sell damn good computer and tablets", 2);                                                                                                                        
+VALUES(
+	10,
+    "/images/logo2.png",
+    "www.shop.com/electronics/Computers and Tablets", 
+    "Desktops",
+    "We sell damn good computer and tablets",
+    2); 
+    
 INSERT INTO Department(id, icons, link, title, description, parentid)
-VALUES(9, "/images/logo2.png", "www.shop.com/electronics/Phones ", "Phones", "We sell damn good Phones", 2);
+VALUES(
+	9,
+    "/images/logo2.png", 
+    "www.shop.com/electronics/Phones ", 
+    "Phones",
+    "We sell damn good Phones", 
+    2);
 
 
 -- populating product
-INSERT INTO Product(id, title, featured, description, stockQuantity, price_BasePrice, price_Discount, price_VAT, deptID)
-VALUES(6, "Men's Jeans", 0, "Damn Good Men's Jeans", 10000, 600, 10, 25, 3);
-INSERT INTO Product(id, title, featured, description, stockQuantity, price_BasePrice, price_Discount, price_VAT, deptID)
-VALUES(7, "Women's Jeans", 1, "Damn Good Women's Jeans", 50000, 700, 30, 25, 4);
-INSERT INTO Product(id, title, featured, description, stockQuantity, price_BasePrice, price_Discount, price_VAT, deptID)
-VALUES(8, "Kid's Jeans", 0, "Damn Good Kid's Jeans", 100, 400, 0, 25, 5);
-INSERT INTO Product(id, title, featured, description, stockQuantity, price_BasePrice, price_Discount, price_VAT, deptID)
-VALUES(9, "Men's Shirts", 0, "Damn Good Men's Shirts", 1000, 300, 20, 25, 3);
-INSERT INTO Product(id, title, featured, description, stockQuantity, price_BasePrice, price_Discount, price_VAT, deptID)
-VALUES(10, "Women's Shirts", 0, "Damn Good Women's Shirts", 6000, 200, 40, 25, 3);
-INSERT INTO Product(id, title, featured, description, stockQuantity, price_BasePrice, price_Discount, price_vat, deptID)
-VALUES(1, "iPhone X", 1, "We sell damn good iPhones", 10, 3000, 15, 25, 2);
-INSERT INTO Product(id, title, featured, description, stockQuantity, price_BasePrice,     price_Discount, price_vat, deptID)
-VALUES(2, "Samsung S8", 1, "We sell damn good samsung s8", 50, 2200, 5, 25, 2);
-INSERT INTO Product(id, title, featured, description, stockQuantity, price_BasePrice,     price_Discount, price_vat, deptID)
-VALUES(3, "Lenovo K6", 0, "We sell damn good lenovo k6", 100, 1500, 15, 25, 2);
-INSERT INTO Product(id, title, featured, description, stockQuantity, price_BasePrice,     price_Discount, price_vat, deptID)
-VALUES(4, "Nokia 360", 0, "We sell damn good Nokia 360", 80, 750, 12, 25, 2);
-INSERT INTO Product(id, title, featured, description, stockQuantity, price_BasePrice,     price_Discount, price_vat, deptID)
-VALUES(5, "Sony Ericsson", 1, "We sell damn good Ericsson", 45, 2500, 20, 25, 2);
+INSERT INTO Product(
+	id, title, featured,
+    description, stockQuantity, 
+    price_BasePrice, price_Discount, 
+    price_VAT, deptID)
+VALUES(6, "Men's Jeans", 0,
+	"Damn Good Men's Jeans", 
+    10000, 600, 10, 25, 3);
+    
+INSERT INTO Product(id, title, featured,
+	description, stockQuantity,
+    price_BasePrice, price_Discount,
+    price_VAT, deptID)
+VALUES(7, "Women's Jeans", 1,
+	"Damn Good Women's Jeans",
+	50000, 700, 30, 25, 4);
+    
+INSERT INTO Product(id, title, featured, 
+	description, stockQuantity, 
+	price_BasePrice, price_Discount,
+    price_VAT, deptID)
+VALUES(8, "Kid's Jeans", 0, 
+    "Damn Good Kid's Jeans",
+    100, 400, 0, 25, 5);
+    
+INSERT INTO Product(id, title, featured, 
+	description, stockQuantity, 
+	price_BasePrice, price_Discount, 
+    price_VAT, deptID)
+VALUES(9, "Men's Shirts", 0, 
+	"Damn Good Men's Shirts",
+    1000, 300, 20, 25, 3);
+    
+INSERT INTO Product(id, title, featured, 
+	description, stockQuantity,
+    price_BasePrice, price_Discount,
+    price_VAT, deptID)
+VALUES(10, "Women's Shirts", 0, 
+	"Damn Good Women's Shirts",
+    6000, 200, 40, 25, 3);
+    
+INSERT INTO Product(id, title, featured,
+	description, stockQuantity,
+    price_BasePrice, price_Discount, 
+    price_vat, deptID)
+VALUES(1, "iPhone X", 1,
+	"We sell damn good iPhones",
+    10, 3000, 15, 25, 2);
+    
+INSERT INTO Product(id, title, featured, 
+	description, stockQuantity, 
+    price_BasePrice, price_Discount,
+    price_vat, deptID)
+VALUES(2, "Samsung S8", 1,
+	"We sell damn good samsung s8",
+    50, 2200, 5, 25, 2);
+    
+INSERT INTO Product(id, title, featured,
+	description, stockQuantity,
+    price_BasePrice, price_Discount,
+    price_vat, deptID)
+VALUES(3, "Lenovo K6", 0, 
+	"We sell damn good lenovo k6",
+    100, 1500, 15, 25, 2);
+    
+INSERT INTO Product(id, title, featured,
+	description, stockQuantity,
+    price_BasePrice,price_Discount, 
+    price_vat, deptID)
+VALUES(4, "Nokia 360", 0,
+	"We sell damn good Nokia 360",
+    80, 750, 12, 25, 2);
+    
+INSERT INTO Product(id, title, featured, 
+	description, stockQuantity,
+    price_BasePrice, price_Discount,
+    price_vat, deptID)
+VALUES(5, "Sony Ericsson", 1,
+	"We sell damn good Ericsson", 
+    45, 2500, 20, 25, 2);
 
 -- populating users
-INSERT INTO Users(id, phoneNumber, email, address_city, address_zip, address_street, fullName_FirstName, fullName_LastName, personNr, checkBox, password)
-VALUES(1, "+467345060", "bobmarley@jammin.com", "Kingston Town", 1234, "420 Rasta High Way", "Bob", "Marley", "420420BOB", 1, "rastamanvibrations");
-INSERT INTO Users(id, phoneNumber, email, address_city, address_zip, address_street, fullName_FirstName, fullName_LastName, personNr, checkBox, password)
-VALUES(2, "+467345063", "ironlion@positivevibrations.com", "Kingston Town", 1334, "420 Herb Way", "Iron", "Lion", "420420BOB", 1, "ironlikealioninzion");
+INSERT INTO Users(id, phoneNumber, email,
+	address_city, address_zip,
+    address_street, fullName_FirstName, 
+    fullName_LastName, personNr,
+    checkBox, password)
+VALUES(1, "+467345060", "bobmarley@jammin.com",
+	"Kingston Town", 1234, "420 Rasta High Way",
+    "Bob", "Marley", "420420BOB",
+    1, "rastamanvibrations");
+    
+INSERT INTO Users(id, phoneNumber, email,
+	address_city, address_zip,
+    address_street, fullName_FirstName, 
+    fullName_LastName, personNr,
+    checkBox, password)
+VALUES(2, "+467345063", "ironlion@positivevibrations.com", 
+	"Kingston Town", 1334, "420 Herb Way", 
+    "Iron", "Lion", "420420BOB", 
+    1, "ironlikealioninzion");
 
 -- populating user_products
 INSERT INTO User_Product(uid, pid, review_stars, review_text)
 VALUES(1, 10, 5, "great shirt");
+
 INSERT INTO User_Product(uid, pid, review_stars, review_text)
 VALUES(2, 6, 2, "the jeans are too small");
 
 -- note inserting into Orders, must be followed up by inserting which product is selected into Order Products.
-INSERT INTO Orders(id, orderDate, paymentReference, trackingNumber, uid)
-VALUES(1, "22/11/2017", "ref-1", "TN12345678", 1);
-INSERT INTO Orders(id, orderDate, paymentReference, trackingNumber, uid) 
-VALUES(2, "24/12/2017", "ref-2", "TN54356781",2);
+INSERT INTO Orders(id, orderDate, 
+	paymentReference, trackingNumber, uid)
+VALUES(1, "22/11/2017",
+	"ref-1", "TN12345678", 1);
+    
+INSERT INTO Orders(id, orderDate,
+	paymentReference, trackingNumber, uid) 
+VALUES(2, "24/12/2017",
+	"ref-2", "TN54356781",2);
 
 -- populating Order_Products
 INSERT INTO Order_Products(orderID, prod_ID, quantity)
@@ -175,3 +331,117 @@ INSERT INTO Keyword_Products(key_ID, prod_ID)
 VALUES(10, 4);
 INSERT INTO Keyword_Products(key_ID, prod_ID)
 VALUES(10, 5);
+
+-- more insert statements just to overpopulate (required for task5 - optimization section)
+INSERT INTO Product(id, title, featured,
+	description, stockQuantity,
+	price_BasePrice,price_Discount, 
+    price_vat, deptID)
+VALUES(12, "Dell XPS 15", 1,
+	"We sell damn good Dell XPS laptops",
+    100, 23000, 25, 25, 7);
+
+INSERT INTO Product(id, title, featured,
+	description, stockQuantity,
+    price_BasePrice,price_Discount,
+    price_vat, deptID)
+VALUES(13, "HP Pavilion g6", 0, 
+	"We sell damn good HP Pavilion g6s",
+    50, 5000, 30, 25, 7);
+
+INSERT INTO Product(id, title, featured,
+	description, stockQuantity,
+    price_BasePrice,price_Discount, 
+    price_vat, deptID)
+VALUES(14, "Black Shuttle", 0,
+	"We sell damn good Black Shuttles", 
+    300, 5000, 12, 25, 8);
+
+INSERT INTO Product(id, title, featured,
+	description, stockQuantity,
+    price_BasePrice,price_Discount, 
+    price_vat, deptID)
+VALUES(15, "Ant Miner", 1, 
+	"We sell damn good Ant Miner", 
+    28, 30000, 7, 25, 8);
+-- *********************************************************************************
+
+INSERT INTO Product(id, title, featured,
+	description, stockQuantity,
+	price_BasePrice,price_Discount,
+    price_vat, deptID)
+VALUES(16, "Lenovo", 0, 
+	"We sell damn good Lenovo",
+    100, 1500, 28, 25, 7);
+
+INSERT INTO Product(id, title, featured,
+	description, stockQuantity,
+    price_BasePrice,price_Discount, 
+    price_vat, deptID)
+VALUES(17, "Surface Pro", 0,
+	"We sell damn good Surface Pro",
+    41, 1900, 14, 25, 7);
+
+INSERT INTO Product(id, title, featured, 
+	description, stockQuantity,
+    price_BasePrice,price_Discount, 
+    price_vat, deptID)
+VALUES(18, "Razer", 1,
+	"We sell damn good Razer", 
+    28, 30000, 16, 25, 7);
+
+INSERT INTO Product(id, title, featured,
+	description, stockQuantity, 
+    price_BasePrice,price_Discount,
+    price_vat, deptID)
+VALUES(19, "Alien ware", 1, 
+	"We sell damn good Alien ware",
+	99, 30000, 10, 25, 7);
+
+INSERT INTO Product(id, title, featured, 
+	description, stockQuantity,
+	price_BasePrice,price_Discount,
+    price_vat, deptID)
+VALUES(20, "Chrome Book", 1,
+	"We sell damn good Chrome Book",
+    50, 1700, 25, 25, 7);
+
+INSERT INTO Product(id, title, featured,
+	description, stockQuantity,
+    price_BasePrice,price_Discount, 
+    price_vat, deptID)
+VALUES(21, "Asus", 1,
+	"We sell damn good Asus",
+    52, 1900, 23, 25, 7);
+
+INSERT INTO Product(id, title, featured, 
+	description, stockQuantity, 
+    price_BasePrice,price_Discount, 
+    price_vat, deptID)
+VALUES(22, "Acer Aspire", 1, 
+	"We sell damn good Acer Aspire",
+    76, 2100, 21, 25, 7);
+
+INSERT INTO Product(id, title, featured, 
+	description, stockQuantity,
+	price_BasePrice,price_Discount,
+    price_vat, deptID)
+VALUES(23, "MacBook Air", 1,
+	"We sell damn good MacBook Air",
+    29, 3100, 5, 25, 7);
+
+INSERT INTO Product(id, title, featured,
+	description, stockQuantity,
+	price_BasePrice,price_Discount, 
+    price_vat, deptID)
+VALUES(24, "MSI", 1, 
+	"We sell damn good MSI", 
+    79, 1850, 21, 25, 7);
+
+INSERT INTO Product(id, title, featured,
+	description, stockQuantity, 
+	price_BasePrice,price_Discount, 
+    price_vat, deptID)
+VALUES(25, "Dell Latitude", 1,
+	"We sell damn good Dell Latitude",
+    94, 2580, 12, 25, 7);
