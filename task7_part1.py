@@ -5,7 +5,7 @@
 
 import MySQLdb
 
-conn = MySQLdb.connect("back.db1.course.it.uu.se", "fall17_it7", "aaaCbaQp", "fall17_project_it7")  # hostname, username, password, database
+conn = MySQLdb.connect("back.db1.course.it.uu.se", "fall17_it7", "aaaCbaQp", "fall17_project_it7")
 conn.autocommit(True)
 cursor = conn.cursor()
 
