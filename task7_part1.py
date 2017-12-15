@@ -11,10 +11,16 @@ try:
     conn.autocommit(True)
     cursor = conn.cursor()
 
+
     while True:
         department_id = int(raw_input("Enter Department id (0 to exit): "))
         if department_id == 0:
             break
+
+        conn = MySQLdb.connect("back.db1.course.it.uu.se", "fall17_it7", "aaaCbaQp", "fall17_project_it7")
+        conn.autocommit(True)
+        cursor = conn.cursor()
+
 
         cursor.execute("""
             SELECT id, title
